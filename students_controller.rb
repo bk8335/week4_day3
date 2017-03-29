@@ -16,6 +16,7 @@ end
 
 post '/students' do
   @students = Student.new(params)
+  # binding.pry
   @students.save()
   erb(:student_confirmation)
 end
