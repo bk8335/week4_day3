@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( './model/student_details')
+require_relative( './model/houses')
 
 get '/students' do
 @students = Student.all()
