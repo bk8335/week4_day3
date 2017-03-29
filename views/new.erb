@@ -9,10 +9,11 @@
   <br/>
   <label for="house">Select a house:</label>
   <select id="house" name="house">
-    <option value="Gryffindor">Gryffindor</option>
-    <option value="Hufflepuff">Hufflepuff</option>
-    <option value="Slytherin">Slytherin</option>
-    <option value="Ravenclaw">Ravenclaw</option>
+    <% @houses.each do |house| %>
+    <option value= <%=house.id%>>
+    <%=house.name%>
+    </option>
+    <% end %>
     
   </select>
   <br/>
