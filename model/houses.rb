@@ -14,4 +14,22 @@ def save
  house = SqlRunner.run(sql)
  @id = house.first()['id'].to_i
 end
+
+def self.delete()
+  sql = "DELETE FROM houses"
+  SqlRunner.run( sql )
+end
+
+def self.all
+  sql = "SELECT * FROM houses"
+  houses = SqlRunner.run(sql)
+  houses_all = houses.map{|house| House.new(house)}
+  return houses_all
+end
+
+def self.find(id)
+  sql = "SELECT * FROM houses where id = #{id} "
+  find_house = SqlRunner.run(sql)
+  return find_house.first()
+end
 end
