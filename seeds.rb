@@ -1,4 +1,6 @@
 require_relative('model/student_details')
+require_relative('model/houses')
+
 require('pry')
 
 student1 = Student.new({
@@ -18,6 +20,11 @@ student2 = Student.new({
 student1.save()
 student2.save()
 
-binding.pry
+house1 = House.new({
+  "name"=>"Gryffindor",
+  "logo"=>"Gryffindor/logo"
+  })
 
-return nil
+house1.save()
+binding.pry
+ nil
